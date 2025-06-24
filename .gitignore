@@ -4,7 +4,6 @@ node_modules/
 # сборочные артефакты
 dist/
 build/
-*.js
 *.js.map
 
 # кэш и временные файлы
