@@ -1,11 +1,10 @@
 {
-  "id": "sortable-tables-plugin",
+  "id": "sortable-tables",
   "name": "Sortable Tables",
   "version": "1.0.0",
   "minAppVersion": "1.0.0",
   "description": "Adds sortable columns to markdown tables in preview mode.",
   "author": "Filippov Ilya",
   "main": "main.js",
-  "authorUrl": "https://github.com/filippov112",
-  "isDesktopOnly": false
+  "authorUrl": "https://github.com/filippov112"
 }
