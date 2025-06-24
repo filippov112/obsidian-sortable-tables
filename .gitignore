@@ -1,0 +1,22 @@
+# node modules
+node_modules/
+
+# сборочные артефакты
+dist/
+build/
+*.js
+*.js.map
+
+# кэш и временные файлы
+.cache/
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sw?
+
+# ОС
+*.swp
