@@ -56,4 +56,5 @@ node build.js
 * Works in preview mode (Obsidian reading mode)
 * Does not affect the file content (only visual changes)
 
-
+---
+This plugin is licensed under the MIT license. See the [LICENSE](./LICENSE) file.
