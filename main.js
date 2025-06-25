@@ -16,7 +16,7 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// main.ts
+// src/main.ts
 var main_exports = {};
 __export(main_exports, {
   default: () => SortableTablesPlugin
@@ -36,7 +36,6 @@ function makeTableSortable(table) {
     tableOriginalRowsMap.set(table, originalRows);
   }
   headers.forEach((header, index) => {
-    header.style.cursor = "pointer";
     header.addEventListener("click", (e) => {
       var _a;
       const isShift = e.shiftKey;
@@ -79,20 +78,14 @@ function makeTableSortable(table) {
           for (const { index: index2, direction } of newSortStates) {
             const cellA = (_c = (_b = (_a2 = a.children[index2]) == null ? void 0 : _a2.textContent) == null ? void 0 : _b.trim()) != null ? _c : "";
             const cellB = (_f = (_e = (_d = b.children[index2]) == null ? void 0 : _d.textContent) == null ? void 0 : _e.trim()) != null ? _f : "";
-            const numA = parseFloat(cellA);
-            const numB = parseFloat(cellB);
             let cmp = 0;
-            if (!isNaN(numA) && !isNaN(numB)) {
-              cmp = numA - numB;
-            } else {
-              cmp = cellA.localeCompare(cellB);
-            }
+            cmp = cellA.localeCompare(cellB);
             if (cmp !== 0) return direction === "asc" ? cmp : -cmp;
           }
           return 0;
         });
       }
-      tbody.innerHTML = "";
+      tbody.replaceChildren();
       rows.forEach((row) => tbody.appendChild(row));
     });
   });

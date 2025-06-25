@@ -2,7 +2,7 @@ const esbuild = require("esbuild");
 
 async function build(watch = false) {
   const ctx = await esbuild.context({
-    entryPoints: ["main.ts"],
+    entryPoints: ["src/main.ts"],
     bundle: true,
     outfile: "main.js",
     format: "cjs",

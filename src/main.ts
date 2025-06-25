@@ -23,8 +23,6 @@ function makeTableSortable(table: HTMLTableElement) {
     }
 
     headers.forEach((header, index) => {
-        (header as HTMLElement).style.cursor = "pointer";
-
         header.addEventListener("click", (e) => {
         const isShift = (e as MouseEvent).shiftKey;
         const sortStates = tableSortStateMap.get(table) ?? [];
@@ -74,15 +72,15 @@ function makeTableSortable(table: HTMLTableElement) {
             for (const { index, direction } of newSortStates) {
                 const cellA = a.children[index]?.textContent?.trim() ?? "";
                 const cellB = b.children[index]?.textContent?.trim() ?? "";
-                const numA = parseFloat(cellA);
-                const numB = parseFloat(cellB);
+                // const numA = parseFloat(cellA);
+                // const numB = parseFloat(cellB);
 
                 let cmp = 0;
-                if (!isNaN(numA) && !isNaN(numB)) {
-                cmp = numA - numB;
-                } else {
+                // if (!isNaN(numA) && !isNaN(numB)) {
+                // cmp = numA - numB;
+                // } else {
                 cmp = cellA.localeCompare(cellB);
-                }
+                // }
 
                 if (cmp !== 0) return direction === "asc" ? cmp : -cmp;
             }
@@ -90,7 +88,7 @@ function makeTableSortable(table: HTMLTableElement) {
             });
         }
 
-        tbody.innerHTML = "";
+        tbody.replaceChildren();
         rows.forEach(row => tbody.appendChild(row));
         });
     });

@@ -6,5 +6,6 @@
   "description": "Adds sortable columns to markdown tables in preview mode.",
   "author": "filippov112",
   "authorUrl": "https://github.com/filippov112",
-  "isDesktopOnly": false
+  "isDesktopOnly": false,
+  "css": "styles.css"
 }
